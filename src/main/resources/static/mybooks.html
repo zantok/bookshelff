@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <title>Bookshelf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</head>
+<body>
+    <div class="w3-bar w3-black">
+        <a href="/" class="w3-bar-item w3-button">Home</a>
+        <a href="mybooks.html" class="w3-bar-item w3-button">My Books</a>
+        <a href="#" class="w3-bar-item w3-button w3-right">Log in</a>
+    </div>
+
+    <div class="w3-container w3-margin w3-padding">
+        <div class="w3-row">
+            <button class="w3-button w3-left-align w3-col s12 w3-green" onclick="toggleGroup('availableBooks')">Available books</button>
+        </div>
+        <div id="availableBooks" class="w3-row w3-animate-left">
+            <div class="w3-col s12 m4 l3">
+                <a href="book.html" class="w3-card-4 w3-margin" style="display:block">
+                    <img src="http://via.placeholder.com/300x300" style="width:100%">
+                    <div class="w3-container">
+                        <h3>La Geometria Mar</h3>
+                        <p>Herodes Palomo Chavez</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="w3-col s12 m4 l3">
+                <a href="book.html" class="w3-card-4 w3-margin" style="display:block">
+                    <img src="http://via.placeholder.com/300x300" style="width:100%">
+                    <div class="w3-container">
+                        <h3>La Geometria Mar</h3>
+                        <p>Herodes Palomo Chavez</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="w3-row">
+            <button class="w3-button w3-left-align w3-col s12 w3-green" onclick="toggleGroup('ownedBooks')">Owned books</button>
+        </div>
+        <div id="ownedBooks" class="w3-row w3-animate-left w3-hide">
+            <div class="w3-col s12 m4 l3">
+                <a href="book.html" class="w3-card-4 w3-margin" style="display:block">
+                    <img src="http://via.placeholder.com/300x300" style="width:100%">
+                    <div class="w3-container">
+                        <h3>La Geometria Mar</h3>
+                        <p>Herodes Palomo Chavez</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="w3-row">
+            <button class="w3-button w3-left-align w3-col s12 w3-green" onclick="toggleGroup('queuedBooks')">In queue</button>
+        </div>
+        <div id="queuedBooks" class="w3-row w3-animate-left w3-hide">
+            <div class="w3-col s12 m4 l3">
+                <a href="book.html" class="w3-card-4 w3-margin" style="display:block">
+                    <img src="http://via.placeholder.com/300x300" style="width:100%">
+                    <div class="w3-container">
+                        <h3>La Geometria Mar</h3>
+                        <p>Herodes Palomo Chavez</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleGroup(id) {
+            w3.toggleClass('#' + id, 'w3-hide')
+        }
+    </script>
+</body>
+</html>

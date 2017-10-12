@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Bookshelf</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">   
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>   
     </head>
     <body>
-        <div class="w3-bar w3-black">
-            <a href="/" class="w3-bar-item w3-button">Home</a>
-            <a href="mybooks.html" class="w3-bar-item w3-button">My Books</a>
-            <a href="#" class="w3-bar-item w3-button w3-right">Log in</a>
-        </div>
+    
+        <div th:replace="fragments/menu :: main"></div>
 
         <div class="w3-container w3-margin">
             <div class="w3-row-padding">
@@ -18,7 +15,7 @@
             </div>
             <div class="w3-row-padding">
                 <div class="w3-col l4 m6 s12">
-                    <img src="http://via.placeholder.com/300x300" style="width:100%">
+                    <img src="http://via.placeholder.com/300x300" style="width:100%"/>
                 </div>
                 <div class="w3-col l8 m6 s12">
                     <table class="w3-table w3-bordered">

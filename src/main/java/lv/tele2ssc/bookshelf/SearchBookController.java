@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SearchBookController {
@@ -32,7 +33,19 @@ public class SearchBookController {
     @RequestMapping(method = RequestMethod.POST, path = "/")
     public String search(@RequestParam String term, Model model) {
         logger.debug("User serches for {}", term);
+
+        Book b1 = new Book();
+        b1.setId(1L);
+        b1.setTitle(term);
+        b1.setAuthor("John Smith");
+        b1.setDescription("blah blah blah");
+        b1.setYear(2035);
+        ModelAndView mv = new ModelAndView("index");
+
+        List<Book> list = Collections.singletonList(b1);
         
+        model.addAttribute("books", list);
+
         return "index";
     }
     

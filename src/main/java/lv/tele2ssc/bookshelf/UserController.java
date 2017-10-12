@@ -18,6 +18,7 @@ public class UserController {
         b1.setAuthor("John Smith");
         b1.setDescription("blah blah blah");
         b1.setYear(2035);
+        
         List<Book> available = Collections.nCopies(3, b1);
         List<Book> queued = Collections.nCopies(5, b1);
         List<Book> owned = Collections.nCopies(2, b1);

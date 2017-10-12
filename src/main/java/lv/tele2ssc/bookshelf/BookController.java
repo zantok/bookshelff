@@ -23,6 +23,7 @@ public class BookController {
         b1.setTitle("Book One");
         b1.setAuthor("John Smith");
         b1.setDescription("blah blah blah");
+        b1.setIsbn("1111-222-3333-44-55");
         b1.setYear(2035);
 
         model.addAttribute("book", b1);

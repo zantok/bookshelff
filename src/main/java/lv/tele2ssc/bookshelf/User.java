@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "user")
@@ -25,6 +26,8 @@ public class User implements Serializable {
     private String email;
     @Column(name = "password")
     private String password;
+    @Transient
+    private String password2;
     @ManyToMany
     @JoinTable(name="user_role",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -61,6 +64,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPassword2() {
+        return password2;
+    }
+
+    public void setPassword2(String password2) {
+        this.password2 = password2;
     }
     
     

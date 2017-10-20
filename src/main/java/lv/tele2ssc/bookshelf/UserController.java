@@ -29,4 +29,9 @@ public class UserController {
         return "mybooks";
     }
     
+    @RequestMapping(path="/login", method=RequestMethod.GET)
+    public String login(Model model) {
+        return "login";
+    }
+    
 }

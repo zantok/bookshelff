@@ -8,15 +8,26 @@ import javax.persistence.Id;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
 
-@Entity
+/**
+ * Entity classes are classes mapped to database table. 
+ */
+@Entity // To make mapping "magic" happen we need @Entity annotation.
 public class Book implements Serializable {
+
     private static final long serialVersionUID = 1L;
-    
-    @Id
-    @GeneratedValue
+
+    /**
+     * id of the entity
+     */
+    @Id // required to mark a field as primary key
+    @GeneratedValue // primary key is autoincrement
     private Long id;
-    @Column
-    @NotEmpty
+
+    /**
+     * book title
+     */
+    @Column // marks field as a column (mapped to DB) 
+    @NotEmpty // validate this attribute to be non-empty
     private String title;
     @Column
     @NotEmpty
@@ -28,9 +39,12 @@ public class Book implements Serializable {
     @NotEmpty
     private String isbn;
     @Column
-    @Range(min = 1000, max=5000)
+    @Range(min = 1000, max = 5000) // validate number for range
     private int year;
 
+    
+    // GETTERS AND SETTERS
+    
     public Long getId() {
         return id;
     }
@@ -83,8 +97,5 @@ public class Book implements Serializable {
     public String toString() {
         return "Book{" + "id=" + id + ", title=" + title + ", author=" + author + ", description=" + description + ", isbn=" + isbn + ", year=" + year + '}';
     }
-    
-    
-    
-    
+
 }

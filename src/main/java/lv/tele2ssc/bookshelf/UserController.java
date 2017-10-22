@@ -60,9 +60,11 @@ public class UserController {
     @RequestMapping(path = "/register", method = RequestMethod.POST)
     public String register(@Valid User user, BindingResult bindingResult, Model model) {
 
+        // some additional validation
         validateEmail(user, bindingResult);
         validatePassword(user, bindingResult);
         
+        // validation isn't passed return back to registration form
         if (bindingResult.hasErrors()) {
             return "register";
         }

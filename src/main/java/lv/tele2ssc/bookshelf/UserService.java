@@ -6,6 +6,12 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+/**
+ * According to good designing rules Services should provide business logic for
+ * this or that domain and could be used from clients like web controllers 
+ * or rest services
+ */
 @Service
 public class UserService {
     
@@ -24,7 +30,16 @@ public class UserService {
     
     public void save(User user) {
         Role usersRole = findRole("user");
-        Set<Role> roleSet = Collections.singleton(usersRole);
+        Set<Role> roleSet = new HashSet<>();
+
+        // making sure roles preserved if user is about to update
+        if (user.getId() != null) {
+            User existing = userRepository.findOne(user.getId());
+            roleSet.addAll(existing.getRoles());
+        }
+        
+        roleSet.add(usersRole);
+
         user.setRoles(roleSet);
         userRepository.save(user);
     }

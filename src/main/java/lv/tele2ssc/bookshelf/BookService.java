@@ -4,6 +4,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+/**
+ * According to good designing rules Services should provide business logic for
+ * this or that domain and could be used from clients like web controllers 
+ * or rest services
+ */
 @Service
 public class BookService {
     @Autowired

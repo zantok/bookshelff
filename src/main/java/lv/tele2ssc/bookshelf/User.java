@@ -11,6 +11,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "user")
@@ -22,9 +25,12 @@ public class User implements Serializable {
     private Long id;
     @Column(name = "full_name")
     private String fullName;
+    @Email
+    @NotEmpty
     @Column(name = "email")
     private String email;
     @Column(name = "password")
+    @Length(min = 5)
     private String password;
     @Transient
     private String password2;
@@ -72,6 +78,14 @@ public class User implements Serializable {
 
     public void setPassword2(String password2) {
         this.password2 = password2;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
     
     

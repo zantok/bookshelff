@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Bookshelf</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>   
+    </head>
+    <body>
+
+        <div th:replace="fragments/menu :: main"></div>
+
+
+        <div class="w3-row-padding">
+            <h3>Select a user</h3>
+        </div>
+
+        <table class="w3-table w3-table-all">
+               <tr>
+                <th>Id</th>
+                <th>Full name</th>
+                <th>Email</th>
+            </tr>
+            <tr th:each="u : ${users}">
+                        <td><a th:href="@{/manage/user(userId=${u.id})}"  th:text="${u.id}" >
+                    </a></td>
+                <td> <a th:href="@{/user(userId=${u.fullName})}" th:text="${u.fullName}"></a> </td>
+                <td> <a th:href="@{/user(userId=${u.email})}" th:text="${u.email}"></a> </td>
+            </tr>
+
+
+        </table>
+
+    </body>
+</html>

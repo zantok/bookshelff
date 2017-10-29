@@ -13,6 +13,13 @@ values (2, 'Simple User', 'user@domain.com', 'user');
 
 insert into user_role(user_id, role_id) values (2,2);
 
+insert into role (id, role_name) values (3, 'manager');
+
+insert into user (id, full_name, email, password)
+values (3, 'Manager Manager', 'manager@gmail.com', 'manager');
+
+insert into user_role(user_id, role_id) values (3,3);
+
 
 insert into book (author, description, isbn, title, year) values (
 'Akinyemi Ruelas Rojo', 
